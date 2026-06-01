@@ -278,6 +278,52 @@ footer a:hover { color:var(--accent); }
 .fade { opacity:0; transform:translateY(14px); transition:opacity .6s ease,transform .6s ease; }
 .fade.in { opacity:1; transform:translateY(0); }
 
+/* app modal */
+.modal-overlay {
+  position:fixed; inset:0; z-index:200;
+  background:rgba(10,15,30,.5);
+  display:flex; align-items:center; justify-content:center;
+  padding:24px; opacity:0; pointer-events:none;
+  transition:opacity .3s ease;
+}
+.modal-overlay.open { opacity:1; pointer-events:auto; }
+.modal {
+  background:var(--bg); border:1px solid var(--line2);
+  border-radius:14px; width:100%; max-width:440px;
+  max-height:85vh; overflow-y:auto; padding:26px;
+  opacity:0; transform:translateY(16px) scale(.97);
+  transition:transform .35s cubic-bezier(.16,1,.3,1), opacity .3s ease;
+}
+.modal-overlay.open .modal { opacity:1; transform:translateY(0) scale(1); }
+.modal-close {
+  position:absolute; top:18px; right:20px;
+  font-size:22px; color:var(--muted); cursor:pointer;
+  background:none; border:none; line-height:1; transition:color .2s;
+}
+.modal-close:hover { color:var(--text); }
+.modal-head { margin-bottom:16px; }
+.modal-name { font-size:22px; font-weight:600; color:var(--title); letter-spacing:-.02em; margin-bottom:4px; }
+.modal-type { font-size:13px; color:var(--sub); }
+.modal-shots { display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; margin-bottom:18px; }
+.modal-shot {
+  flex-shrink:0; width:120px; aspect-ratio:9/16;
+  border-radius:8px; border:1px solid var(--line2);
+  background:var(--bg3); object-fit:cover;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; color:var(--muted); text-align:center;
+}
+.modal-stack { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px; }
+.modal-tag { font-size:11px; color:var(--accent); background:rgba(46,77,176,.08); padding:3px 9px; border-radius:100px; }
+.modal-btn {
+  display:block; text-align:center; text-decoration:none;
+  font-size:14px; font-weight:500; padding:12px;
+  border-radius:8px; background:transparent;
+  border:1px solid var(--accent); color:var(--accent);
+  transition:background .2s, color .2s, border-color .2s;
+}
+.modal-btn:hover { background:rgba(46,77,176,.06); }
+.modal-btn.disabled { background:transparent; border-color:var(--line2); color:var(--muted); cursor:default; pointer-events:none; }
+
 @media(max-width:600px) {
   .wrap { padding:0 22px; }
   .lang-inner { padding:0 22px; }
@@ -433,31 +479,19 @@ footer a:hover { color:var(--accent); }
   <section class="section fade">
     <p class="sec-label" data-i18n="apps">앱</p>
     <div class="proj-list">
-      <a class="proj-item" href="https://play.google.com/store/apps/details?id=com.aiid.bitelens.bitelens" target="_blank">
+      <div class="proj-item" data-app="bitelens" style="cursor:pointer;">
         <span class="proj-num">01</span>
         <div class="proj-main">
           <div class="proj-name">BiteLens</div>
           <div class="proj-type" data-i18n="bitelens-type">AI 기반 음식 칼로리·영양 분석 앱 · Android</div>
-          <div class="slash-list">
-            <span class="slash-item">Flutter</span><span class="slash-sep">/</span>
-            <span class="slash-item">Gemini AI</span><span class="slash-sep">/</span>
-            <span class="slash-item">SQLite</span><span class="slash-sep">/</span>
-            <span class="slash-item">Dart</span>
-          </div>
         </div>
-        <div class="proj-right"><span class="proj-link">Play Store ↗</span></div>
-      </a>
-      <div class="proj-item" style="cursor:default;">
+        <div class="proj-right"><span class="proj-link" style="font-size:16px;">↗</span></div>
+      </div>
+      <div class="proj-item" data-app="bibly" style="cursor:pointer;">
         <span class="proj-num">02</span>
         <div class="proj-main">
           <div class="proj-name">Bibly</div>
           <div class="proj-type" data-i18n="bibly-type">성경·찬송가 앱 · Android</div>
-          <div class="slash-list">
-            <span class="slash-item">Flutter</span><span class="slash-sep">/</span>
-            <span class="slash-item">Gemini AI</span><span class="slash-sep">/</span>
-            <span class="slash-item">getbible API</span><span class="slash-sep">/</span>
-            <span class="slash-item">Hive</span>
-          </div>
         </div>
         <div class="proj-right"><span class="proj-status" data-i18n="coming-soon">출시 예정</span></div>
       </div>
@@ -657,6 +691,40 @@ footer a:hover { color:var(--accent); }
 
 </div>
 
+<div class="modal-overlay" id="appModal">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" id="modalClose" aria-label="close">×</button>
+    <div class="modal-head">
+      <div class="modal-name" id="modalName"></div>
+      <div class="modal-type" id="modalType"></div>
+    </div>
+    <div class="modal-shots" id="modalShots"></div>
+    <div class="modal-stack" id="modalStack"></div>
+    <a class="modal-btn" id="modalBtn" target="_blank"></a>
+  </div>
+</div>
+
+<script>
+const appData = {
+  bitelens: {
+    name: 'BiteLens',
+    typeKey: 'bitelens-type',
+    stack: ['Flutter', 'Gemini AI', 'SQLite', 'Dart'],
+    shots: ['assets/bitelens-1.png', 'assets/bitelens-2.png', 'assets/bitelens-3.png'],
+    store: 'https://play.google.com/store/apps/details?id=com.aiid.bitelens.bitelens',
+    btnKey: 'open-playstore'
+  },
+  bibly: {
+    name: 'Bibly',
+    typeKey: 'bibly-type',
+    stack: ['Flutter', 'Gemini AI', 'getbible API', 'Hive'],
+    shots: ['assets/bibly-1.png', 'assets/bibly-2.png', 'assets/bibly-3.png'],
+    store: null,
+    btnKey: 'coming-soon'
+  }
+};
+</script>
+
 <script>
 const i18n = {
   ko: {
@@ -698,6 +766,7 @@ const i18n = {
     'apps': '앱',
     'bitelens-type': 'AI 기반 음식 칼로리·영양 분석 앱 · Android',
     'coming-soon': '출시 예정',
+    'open-playstore': 'Play Store',
     'bibly-type': '성경·찬송가 앱 · Android',
     'recent-posts': '최근 글',
     'post1': '프라이빗 블록체인 네트워크 구축 및 백엔드 연동하기',
@@ -760,6 +829,7 @@ const i18n = {
     'apps': 'Apps',
     'bitelens-type': 'AI-Powered Food Calorie & Nutrition Analyzer · Android',
     'coming-soon': 'Coming Soon',
+    'open-playstore': 'Play Store',
     'bibly-type': 'Bible & Hymnal App · Android',
     'recent-posts': 'Recent Posts',
     'post1': 'Building a Private Blockchain Network & Backend Integration',
@@ -822,6 +892,7 @@ const i18n = {
     'apps': 'アプリ',
     'bitelens-type': 'AI 食事カロリー・栄養分析アプリ · Android',
     'coming-soon': 'リリース予定',
+    'open-playstore': 'Play Store',
     'bibly-type': '聖書・讃美歌アプリ · Android',
     'recent-posts': '最近の投稿',
     'post1': 'プライベートブロックチェーンネットワーク構築とバックエンド連携',
@@ -848,6 +919,7 @@ const i18n = {
 };
 
 function setLang(lang) {
+  window.currentLang = lang;
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.textContent.trim() === {ko:'한국어',en:'English',ja:'日本語'}[lang]);
@@ -876,6 +948,78 @@ document.querySelectorAll('.tc-head').forEach(head => {
     if(!wasOpen) tc.classList.add('open');
   });
 });
+
+const modal = document.getElementById('appModal');
+let currentApp = null;
+
+function renderModal() {
+  if (!currentApp) return;
+  const app = appData[currentApp];
+  const dict = i18n[window.currentLang || 'ko'];
+  document.getElementById('modalName').textContent = app.name;
+  document.getElementById('modalType').innerHTML = dict[app.typeKey] || '';
+
+  const shots = document.getElementById('modalShots');
+  shots.innerHTML = '';
+  app.shots.forEach((src, idx) => {
+    const img = document.createElement('img');
+    img.className = 'modal-shot';
+    img.src = src;
+    img.alt = app.name + ' screenshot ' + (idx + 1);
+    img.loading = 'lazy';
+    img.onerror = function() {
+      const ph = document.createElement('div');
+      ph.className = 'modal-shot';
+      ph.textContent = 'Screenshot ' + (idx + 1);
+      img.replaceWith(ph);
+    };
+    shots.appendChild(img);
+  });
+
+  const stack = document.getElementById('modalStack');
+  stack.innerHTML = '';
+  app.stack.forEach(t => {
+    const s = document.createElement('span');
+    s.className = 'modal-tag';
+    s.textContent = t;
+    stack.appendChild(s);
+  });
+
+  const btn = document.getElementById('modalBtn');
+  btn.innerHTML = dict[app.btnKey] || '';
+  if (app.store) {
+    btn.href = app.store;
+    btn.classList.remove('disabled');
+    btn.removeAttribute('aria-disabled');
+  } else {
+    btn.removeAttribute('href');
+    btn.classList.add('disabled');
+    btn.setAttribute('aria-disabled', 'true');
+  }
+}
+
+function openModal(key) {
+  currentApp = key;
+  renderModal();
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.remove('open');
+  currentApp = null;
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-app]').forEach(card => {
+  card.addEventListener('click', () => openModal(card.dataset.app));
+});
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+const _setLang = setLang;
+setLang = function(lang) { _setLang(lang); if (modal.classList.contains('open')) renderModal(); };
+
 </script>
 </body>
 </html>
