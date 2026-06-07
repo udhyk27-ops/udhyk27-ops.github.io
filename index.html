@@ -121,6 +121,17 @@ body {
 }
 .hero-mail:hover { color:var(--accent); }
 
+/* hero blog link */
+.hero-blog {
+  font-size:12px; text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:16px; transition:opacity .2s;
+}
+.hero-blog:hover { opacity:.7; }
+.hero-blog .hb-name { color:var(--title); font-weight:500; }
+.hero-blog .hb-val { color:var(--muted); }
+.hero-blog .hb-arrow { color:var(--accent); }
+
 /* section */
 .section { padding:56px 0; }
 .section:last-child { border-bottom:none; }
@@ -129,26 +140,25 @@ body {
   margin-bottom:22px; letter-spacing:-.01em;
 }
 
+/* github section head */
+.gh-head {
+  display:flex; align-items:baseline; justify-content:space-between;
+  margin-bottom:22px;
+}
+.gh-head .sec-label { margin-bottom:0; }
+.gh-link {
+  font-size:12px; color:var(--sub); text-decoration:none;
+  display:inline-flex; align-items:center; gap:6px; transition:opacity .2s;
+}
+.gh-link:hover { opacity:.7; }
+.gh-link .gh-arrow { color:var(--accent); }
+
 /* slash list */
 .slash-list { display:flex; flex-wrap:wrap; align-items:center; gap:0; }
 .slash-item { font-size:14px; color:var(--sub); }
 .slash-item.accent { color:var(--accent); font-weight:500; }
 .slash-item.green { color:var(--green); font-weight:500; }
 .slash-sep { font-size:14px; color:var(--sep); margin:0 9px; user-select:none; }
-
-/* links */
-.links { display:flex; flex-direction:column; }
-.link-item {
-  display:flex; align-items:center; gap:20px;
-  padding:16px 0; border-bottom:1px solid var(--line);
-  text-decoration:none; color:inherit; transition:all .2s;
-}
-.link-item:last-child { border-bottom:none; }
-.link-item:hover .lk-name { color:var(--accent); }
-.link-item:hover .lk-arrow { transform:translate(3px,-3px); }
-.lk-name { font-size:17px; font-weight:500; color:var(--title); min-width:80px; transition:color .2s; }
-.lk-val { font-size:14px; color:var(--muted); flex:1; }
-.lk-arrow { font-size:16px; color:var(--accent); transition:all .25s; opacity:.7; }
 
 /* timeline */
 .tl { display:flex; flex-direction:column; }
@@ -407,6 +417,11 @@ footer a:hover { color:var(--accent); }
         <div>
           <p class="hero-role" data-i18n="role">백엔드 개발자</p>
           <p class="hero-desc" data-i18n="hero-desc"></p>
+          <a class="hero-blog" href="https://udhyk05.tistory.com/" target="_blank">
+            <span class="hb-name">Blog</span>
+            <span class="hb-val">Tistory</span>
+            <span class="hb-arrow">↗</span>
+          </a>
         </div>
       </div>
     </div>
@@ -701,29 +716,16 @@ footer a:hover { color:var(--accent); }
   </section>
 
   <section class="section fade">
-    <p class="sec-label">GitHub</p>
+    <div class="gh-head">
+      <p class="sec-label">GitHub</p>
+      <a class="gh-link" href="https://github.com/udhyk27" target="_blank">github.com/udhyk27 <span class="gh-arrow">↗</span></a>
+    </div>
     <img
       src="https://ghchart.rshah.org/2e4db0/udhyk27"
       style="max-width:100%;height:auto;display:block;border-radius:4px;opacity:.85;"
       alt=""
       onerror="this.style.display='none'"
     >
-  </section>
-
-  <section class="section fade">
-    <p class="sec-label" data-i18n="links">링크</p>
-    <div class="links">
-      <a class="link-item" href="https://udhyk05.tistory.com/" target="_blank">
-        <span class="lk-name">Blog</span>
-        <span class="lk-val">Tistory</span>
-        <span class="lk-arrow">↗</span>
-      </a>
-      <a class="link-item" href="https://github.com/udhyk27" target="_blank">
-        <span class="lk-name">GitHub</span>
-        <span class="lk-val">udhyk27</span>
-        <span class="lk-arrow">↗</span>
-      </a>
-    </div>
   </section>
 
   <footer>
