@@ -185,15 +185,15 @@ body {
 }
 
 /* career + stack 2-column (시안 3) */
-.cs-wrap { display:grid; grid-template-columns:1fr 200px; gap:36px; }
+.cs-wrap { display:grid; grid-template-columns:1fr 200px; gap:36px; align-items:stretch; }
 .cs-company { font-size:18px; font-weight:600; color:var(--title); letter-spacing:-.02em; margin-bottom:3px; }
-.cs-role { font-size:13px; color:var(--accent); font-weight:500; margin-bottom:16px; }
+.cs-role { font-size:13px; color:var(--accent); font-weight:500; margin-bottom:20px; }
 .cs-stack-title {
   font-size:11px; letter-spacing:.08em; color:var(--muted);
   text-transform:uppercase; font-weight:600; margin-bottom:12px;
 }
-.cs-stack { border-left:1px solid var(--line); padding-left:24px; }
-.cs-stack-list { display:flex; flex-direction:column; gap:8px; }
+.cs-stack { border-left:1px solid var(--line); padding-left:24px; display:flex; flex-direction:column; }
+.cs-stack-list { display:flex; flex-direction:column; justify-content:space-between; flex:1; }
 .cs-stack-item { font-size:14px; color:var(--sub); }
 
 /* edu + cert 2-column */
@@ -376,6 +376,7 @@ footer a:hover { color:var(--accent); }
   .tl-item { gap:18px; }
   .cs-wrap { grid-template-columns:1fr; gap:24px; }
   .cs-stack { border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:20px; }
+  .cs-stack-list { justify-content:flex-start; flex:none; gap:8px; }
   .ec-wrap { grid-template-columns:1fr; gap:24px; }
   .ec-side { border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:20px; }
   .modal { padding:24px; }
@@ -429,10 +430,10 @@ footer a:hover { color:var(--accent); }
 
   <section class="section fade">
     <p class="sec-label" data-i18n="career">경력</p>
+    <div class="cs-company" data-i18n="aide-company">(주) 에이드</div>
+    <div class="cs-role"><span data-i18n="aide-role">기술개발사업부</span> · 2024.11 — <span data-i18n="current">재직 중</span></div>
     <div class="cs-wrap">
       <div class="cs-main">
-        <div class="cs-company" data-i18n="aide-company">(주) 에이드</div>
-        <div class="cs-role"><span data-i18n="aide-role">기술개발사업부</span> · 2024.11 — <span data-i18n="current">재직 중</span></div>
         <div class="career-groups">
           <div class="career-group">
             <div class="career-group-title"><span data-i18n="cg1-title">웹 서비스 개발 및 운영</span></div>
