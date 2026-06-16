@@ -49,7 +49,7 @@ body {
   max-width:760px; margin:0 auto; padding:0 36px;
   display:flex; justify-content:space-between; align-items:center; gap:4px;
 }
-.lang-btns { display:flex; gap:4px; }
+.lang-btns { display:none; }  /* 언어 버튼 숨김 (복구하려면 display:flex; gap:4px; 로 변경) */
 .term-prompt {
   font-family:monospace; font-size:13px; color:rgba(30,45,90,.55);
   white-space:nowrap;
@@ -444,7 +444,65 @@ footer a:hover { color:var(--accent); }
     </div>
   </section>
 
+    <section class="section fade" style="padding-top:24px;">
+    <p class="sec-label">GitHub</p>
+    <img
+      src="https://ghchart.rshah.org/2e4db0/udhyk27"
+      style="max-width:100%;height:auto;display:block;border-radius:4px;opacity:.85;"
+      alt=""
+      onerror="this.style.display='none'"
+    >
+  </section>
+
   <section class="section fade">
+    <p class="sec-label" data-i18n="career">경력</p>
+    <div class="cs-company" data-i18n="aide-company">(주) 에이드</div>
+    <div class="cs-role"><span data-i18n="aide-role">기술개발사업부</span> · 2024.11 — <span data-i18n="current">재직 중</span></div>
+    <div class="cs-wrap">
+      <div class="cs-main">
+        <div class="career-groups">
+          <div class="career-group">
+            <div class="career-group-title"><span data-i18n="cg1-title">웹 서비스 개발 및 운영</span></div>
+            <div class="career-items">
+              <div class="career-item" data-i18n="cg1-1">자사 서비스 개발 및 유지보수</div>
+            </div>
+          </div>
+          <div class="career-group">
+            <div class="career-group-title"><span data-i18n="cg2-title">모바일 앱 개발 및 운영</span></div>
+            <div class="career-items">
+              <div class="career-item" data-i18n="cg2-1">iOS / Android 앱 개발 및 배포</div>
+            </div>
+          </div>
+          <div class="career-group">
+            <div class="career-group-title"><span data-i18n="cg3-title">블록체인 연동 시스템 구축</span></div>
+            <div class="career-items">
+              <div class="career-item" data-i18n="cg3-1">프라이빗 블록체인 환경 구성</div>
+            </div>
+          </div>
+          <div class="career-group">
+            <div class="career-group-title"><span data-i18n="cg4-title">빅데이터 처리 및 정산</span></div>
+            <div class="career-items">
+              <div class="career-item" data-i18n="cg4-1">대용량 데이터 집계 및 정산 처리</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-stack">
+        <div class="cs-stack-title" data-i18n="stack">기술 스택</div>
+        <div class="cs-stack-list">
+          <div class="cs-stack-item">PHP · Laravel</div>
+          <div class="cs-stack-item">Java · Spring</div>
+          <div class="cs-stack-item">Oracle DB</div>
+          <div class="cs-stack-item">Hadoop · Hive</div>
+          <div class="cs-stack-item">Flutter</div>
+          <div class="cs-stack-item">Linux</div>
+          <div class="cs-stack-item">Git</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="section fade">
     <p class="sec-label" data-i18n="projects">프로젝트</p>
     <div class="proj-list">
       <a class="proj-item" href="https://www.notion.so/Momo-33881856910c806aaa65d1862ccc0206" target="_blank">
@@ -507,7 +565,7 @@ footer a:hover { color:var(--accent); }
     </div>
   </section>
 
-  <section class="section fade">
+    <section class="section fade">
     <p class="sec-label" data-i18n="apps">앱</p>
     <div class="proj-list">
       <div class="proj-item" data-app="bitelens" style="cursor:pointer;">
@@ -529,7 +587,7 @@ footer a:hover { color:var(--accent); }
     </div>
   </section>
 
-  <section class="section fade">
+    <section class="section fade">
     <p class="sec-label" data-i18n="troubleshooting">문제 해결</p>
     <div class="trouble-wrap">
 
@@ -629,55 +687,7 @@ footer a:hover { color:var(--accent); }
     </div>
   </section>
 
-  <section class="section fade">
-    <p class="sec-label" data-i18n="career">경력</p>
-    <div class="cs-company" data-i18n="aide-company">(주) 에이드</div>
-    <div class="cs-role"><span data-i18n="aide-role">기술개발사업부</span> · 2024.11 — <span data-i18n="current">재직 중</span></div>
-    <div class="cs-wrap">
-      <div class="cs-main">
-        <div class="career-groups">
-          <div class="career-group">
-            <div class="career-group-title"><span data-i18n="cg1-title">웹 서비스 개발 및 운영</span></div>
-            <div class="career-items">
-              <div class="career-item" data-i18n="cg1-1">자사 서비스 개발 및 유지보수</div>
-            </div>
-          </div>
-          <div class="career-group">
-            <div class="career-group-title"><span data-i18n="cg2-title">모바일 앱 개발 및 운영</span></div>
-            <div class="career-items">
-              <div class="career-item" data-i18n="cg2-1">iOS / Android 앱 개발 및 배포</div>
-            </div>
-          </div>
-          <div class="career-group">
-            <div class="career-group-title"><span data-i18n="cg3-title">블록체인 연동 시스템 구축</span></div>
-            <div class="career-items">
-              <div class="career-item" data-i18n="cg3-1">프라이빗 블록체인 환경 구성</div>
-            </div>
-          </div>
-          <div class="career-group">
-            <div class="career-group-title"><span data-i18n="cg4-title">빅데이터 처리 및 정산</span></div>
-            <div class="career-items">
-              <div class="career-item" data-i18n="cg4-1">대용량 데이터 집계 및 정산 처리</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cs-stack">
-        <div class="cs-stack-title" data-i18n="stack">기술 스택</div>
-        <div class="cs-stack-list">
-          <div class="cs-stack-item">PHP · Laravel</div>
-          <div class="cs-stack-item">Java · Spring</div>
-          <div class="cs-stack-item">Oracle DB</div>
-          <div class="cs-stack-item">Hadoop · Hive</div>
-          <div class="cs-stack-item">Flutter</div>
-          <div class="cs-stack-item">Linux</div>
-          <div class="cs-stack-item">Git</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section fade">
+    <section class="section fade">
     <p class="sec-label" data-i18n="edu">학력</p>
     <div class="ec-wrap">
       <div class="ec-main">
@@ -707,7 +717,7 @@ footer a:hover { color:var(--accent); }
     </div>
   </section>
 
-  <section class="section fade">
+    <section class="section fade">
     <p class="sec-label" data-i18n="recent-posts">최근 글</p>
     <div class="art-list">
       <a class="art-item" href="https://udhyk05.tistory.com/20" target="_blank">
@@ -735,16 +745,6 @@ footer a:hover { color:var(--accent); }
         <span class="art-ext">blog ↗</span>
       </a>
     </div>
-  </section>
-
-  <section class="section fade">
-    <p class="sec-label">GitHub</p>
-    <img
-      src="https://ghchart.rshah.org/2e4db0/udhyk27"
-      style="max-width:100%;height:auto;display:block;border-radius:4px;opacity:.85;"
-      alt=""
-      onerror="this.style.display='none'"
-    >
   </section>
 
   <footer>
@@ -786,7 +786,7 @@ const appData = {
     shots: ['assets/bitelens-1.png', 'assets/bitelens-2.png', 'assets/bitelens-3.png'],
     featuresKey: 'bitelens-features',
     store: 'https://play.google.com/store/apps/details?id=com.aiid.bitelens.bitelens',
-    qr: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAewAAAHsCAIAAACfSAk3AAAK+ElEQVR4nO3cvc0z1xVGUdNgpsQduP+y3IETxeNcgIULfVfnPZtcq4Dh/HFjouf1PM8/AGj650+fAAB/nYgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOEDY+9aBfvvXv28dKuf3//7nynFO7uGt3zox+Uwnr+uWW89r23FOTJ7zp7r1LHyJA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhF3bTjnxqfsYtxR3USa3OG7ZtkMyuTGy7blv+61bJt9nX+IAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhAm4gBho9spJ7ZtaNxS3KyYtO26JvdMTn5r20bN5LbMiU/txglf4gBhIg4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGHrtlPY49Z+yOQOyYlPva5t95AZvsQBwkQcIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCbKfwfxX3Q07cOp/J45zc58k9k1vnzK/zJQ4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhC2bjvF3sKfu7XXsW3z5Nb5bNsPOVE8522+uRu+xAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJGt1M+dbfhlsn9EMfZc5wTk7sx23Z1dOPP+RIHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIu7adcmu3gRnF3Y/JDY3i/Sn61Oua5EscIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCRBwg7Np2SnEf45aT67p17ZNbE5PnvO3aT2x7n4v/neI5b3sPfYkDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEXdtOmTS5WbFtJ+HE5LVv21c58c2/tU1xV2fb+fgSBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBvdTrm1EXHi1nbBtl2Lyd2Gbb91YtuWS/EeTpo8523P4tZv+RIHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIG91OubVHceLWdsG2LYVbex23bNuWuWXbdU2+Pycmn9e2d2PyPp/wJQ4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhD2ep7nyoEmtwJOTG5WnLi1t1Dcx5h8N7bdn23/ixPF535i2/O6dZ99iQOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4St207Ztttw63wm3dpgmbRtN+bEtnf1xOQ5F3+ryJc4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThA2Hvyx4pbE5+6wfLN2xfb3sPJa5/870yafBbbnrsvcYAwEQcIE3GAMBEHCBNxgLDX8zxjP7Ztr+PEp26eTB7nlk99FkXFDZZPbYsvcYAwEQcIE3GAMBEHCBNxgLDX8zxjP7Ztr+PEp26eTB7nlk99FkXFDZZPbYsvcYAwEQcIE3GAMBEHCBNxgLDX8zwrAAAAUklEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4DZ6sAAGSGqcAAAAAAElFTkSuQmCC',
+    qr: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAewAAAHsCAIAAACfSAk3AAAK+ElEQVR4nO3cvc0z1xVGUdNgpsQduP+y3IETxeNcgIULfVfnPZtcq4Dh/HFjouf1PM8/AGj650+fAAB/nYgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOEDY+9aBfvvXv28dKuf3//7nynFO7uGt3zox+Uwnr+uWW89r23FOTJ7zp7r1LHyJA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhF3bTjnxqfsYtxR3USa3OG7ZtkMyuTGy7blv+61bJt9nX+IAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhAm4gBho9spJ7ZtaNxS3KyYtO26JvdMTn5r20bN5LbMiU/txglf4gBhIg4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGHrtlPY49Z+yOQOyYlPva5t95AZvsQBwkQcIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCbKfwfxX3Q07cOp/J45zc58k9k1vnzK/zJQ4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhC2bjvF3sKfu7XXsW3z5Nb5bNsPOVE8522+uRu+xAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJGt1M+dbfhlsn9EMfZc5wTk7sx23Z1dOPP+RIHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIu7adcmu3gRnF3Y/JDY3i/Sn61Oua5EscIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCRBwg7Np2SnEf45aT67p17ZNbE5PnvO3aT2x7n4v/neI5b3sPfYkDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEXdtOmTS5WbFtJ+HE5LVv21c58c2/tU1xV2fb+fgSBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBvdTrm1EXHi1nbBtl2Lyd2Gbb91YtuWS/EeTpo8523P4tZv+RIHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIG91OubVHceLWdsG2LYVbex23bNuWuWXbdU2+Pycmn9e2d2PyPp/wJQ4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhD2ep7nyoEmtwJOTG5WnLi1t1Dcx5h8N7bdn23/ixPF535i2/O6dZ99iQOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4St207Ztttw63wm3dpgmbRtN+bEtnf1xOQ5F3+ryJc4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThA2Hvyx4pbE5+6wfLN2xfb3sPJa5/870yafBbbnrsvcYAwEQcIE3GAMBEHCBNxgLDX8zxjP7Ftr+PEp26eTB7nlk99FkXFDZZPbYsvcYAwEQcIE3GAMBEHCBNxgLDX8zxjP7Jtr+PEp26eTB7nlk99FkXFDZZPbYsvcYAwEQcIE3GAMBEHCBNxgLDX8zwrAAAAUklEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4DZ6sAAGSGqcAAAAAAElFTkSuQmCC',
     btnKey: 'open-playstore'
   },
   bibly: {
