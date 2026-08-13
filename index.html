@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
 :root {
   --bg: #f0f2f5;
   --bg2: #e4e7ed;
@@ -26,7 +25,6 @@
   --green-bg: rgba(26,122,69,.08);
   --sep: rgba(40,60,110,.22);
 }
-
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
@@ -35,9 +33,7 @@ body {
   line-height:1.7; overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
-
 .wrap { max-width:760px; margin:0 auto; padding:0 36px; }
-
 /* lang switcher */
 .lang-bar {
   position:sticky; top:0; z-index:100;
@@ -68,16 +64,13 @@ body {
 }
 .lang-btn:hover { color:var(--text); border-color:var(--accent); }
 .lang-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
-
 /* hero */
 .hero { padding:80px 0 56px; }
-
 .hero-body {
   display:flex;
   align-items:stretch;
   gap:48px;
 }
-
 .hero-left {
   flex-shrink: 0;
   width: 132px;
@@ -91,7 +84,6 @@ body {
   color:var(--title); letter-spacing:-.04em; line-height:.92;
 }
 .hero-name strong { font-weight:400; display:block; color:rgba(10,15,30,.45); }
-
 .profile-wrap { width:132px; }
 .profile-img {
   width: 132px;
@@ -106,13 +98,11 @@ body {
   transition: opacity .25s, filter .25s;
 }
 .profile-img:hover { opacity:1; filter:grayscale(0%); }
-
 .hero-mail {
   font-size:12px; color:var(--muted);
   text-decoration:none; transition:color .2s;
 }
 .hero-mail:hover { color:var(--accent); }
-
 .hero-right {
   flex:1;
   display:flex;
@@ -129,7 +119,6 @@ body {
   text-decoration:none; transition:color .2s;
 }
 .hero-mail:hover { color:var(--accent); }
-
 /* hero links */
 .hero-links {
   display:flex; align-items:center; gap:10px;
@@ -148,7 +137,6 @@ body {
 }
 .hero-link .hl-arrow { color:var(--accent); }
 .hero-link-sep { color:var(--sep); font-size:14px; user-select:none; }
-
 /* section */
 .section { padding:44px 0; }
 .section:last-child { border-bottom:none; }
@@ -156,14 +144,12 @@ body {
   font-size:15px; font-weight:700; color:var(--title);
   margin-bottom:22px; letter-spacing:-.01em;
 }
-
 /* slash list */
 .slash-list { display:flex; flex-wrap:wrap; align-items:center; gap:0; }
 .slash-item { font-size:14px; color:var(--sub); }
 .slash-item.accent { color:var(--accent); font-weight:500; }
 .slash-item.green { color:var(--green); font-weight:500; }
 .slash-sep { font-size:14px; color:var(--sep); margin:0 9px; user-select:none; }
-
 /* timeline */
 .tl { display:flex; flex-direction:column; }
 .tl-item { display:flex; gap:28px; padding:24px 0; border-bottom:1px solid var(--line); }
@@ -174,7 +160,6 @@ body {
 .tl-company { font-size:18px; font-weight:600; color:var(--title); letter-spacing:-.02em; margin-bottom:3px; }
 .tl-role { font-size:13px; color:var(--accent); margin-bottom:12px; font-weight:500; }
 .tl-desc { font-size:14px; color:var(--sub); line-height:1.75; margin-bottom:10px; }
-
 /* career detail */
 .career-groups { display:flex; flex-direction:column; gap:14px; }
 .career-group {
@@ -195,7 +180,6 @@ body {
 .career-item {
   font-size:13px; color:var(--sub); line-height:1.7;
 }
-
 /* career + stack 2-column (시안 3) */
 .cs-wrap { display:grid; grid-template-columns:1fr 200px; gap:36px; align-items:stretch; }
 .cs-company { font-size:18px; font-weight:600; color:var(--title); letter-spacing:-.02em; margin-bottom:3px; }
@@ -207,7 +191,6 @@ body {
 .cs-stack { border-left:1px solid var(--line); padding-left:24px; display:flex; flex-direction:column; }
 .cs-stack-list { display:flex; flex-direction:column; justify-content:space-between; flex:1; }
 .cs-stack-item { font-size:14px; color:var(--sub); }
-
 /* edu + cert 2-column */
 .ec-wrap { display:grid; grid-template-columns:1fr 220px; gap:36px; }
 .ec-item { display:flex; gap:18px; padding:12px 0; border-bottom:1px solid var(--line); }
@@ -220,7 +203,6 @@ body {
 .ec-side-title { font-size:11px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; font-weight:600; margin-bottom:12px; }
 .ec-cert { font-size:14px; color:var(--sub); }
 .ec-cert-list { display:flex; flex-direction:column; gap:8px; }
-
 /* projects */
 .proj-list {
   display:flex; flex-direction:column;
@@ -246,7 +228,6 @@ body {
 .proj-meta { font-size:12px; color:var(--muted); }
 .proj-status { font-size:13px; color:var(--accent); font-weight:500; }
 .proj-link { font-size:13px; color:var(--accent); white-space:nowrap; transition:opacity .2s; }
-
 /* articles */
 .art-list { display:flex; flex-direction:column; }
 .art-item {
@@ -262,7 +243,6 @@ body {
 .art-sub { font-size:12px; color:var(--muted); }
 .art-ext { font-size:13px; color:var(--accent); text-decoration:none; flex-shrink:0; }
 .art-ext:hover { color:var(--accent); opacity:.7; }
-
 /* trouble */
 .trouble-wrap { display:flex; flex-direction:column; }
 .tc { border-bottom:1px solid var(--line); overflow:hidden; }
@@ -282,15 +262,12 @@ body {
 .t-val { font-size:14px; color:var(--sub); line-height:1.8; }
 .t-val strong { color:var(--text); font-weight:600; }
 .tc-art-link { font-size:12px; color:var(--accent); text-decoration:none; }
-
 footer { padding:44px 0; border-top:1px solid var(--line2); }
 footer p { font-size:13px; color:var(--muted); }
 footer a { color:inherit; text-decoration:none; transition:color .2s; }
 footer a:hover { color:var(--accent); }
-
 .fade { opacity:0; transform:translateY(14px); transition:opacity .6s ease,transform .6s ease; }
 .fade.in { opacity:1; transform:translateY(0); }
-
 /* app modal */
 .modal-overlay {
   position:fixed; inset:0; z-index:200;
@@ -317,11 +294,9 @@ footer a:hover { color:var(--accent); }
 .modal-head { margin-bottom:14px; padding-right:40px; }
 .modal-name { font-size:23px; font-weight:600; color:var(--title); letter-spacing:-.02em; margin-bottom:5px; }
 .modal-type { font-size:13px; color:var(--sub); }
-
 /* tech stack under intro */
 .modal-stack { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px; }
 .modal-tag { font-size:11px; color:var(--accent); background:rgba(46,77,176,.08); padding:4px 10px; border-radius:100px; }
-
 /* screenshots */
 .modal-shots {
   display:flex; gap:10px; overflow-x:auto; padding-bottom:6px; margin-bottom:22px;
@@ -333,7 +308,6 @@ footer a:hover { color:var(--accent); }
   display:flex; align-items:center; justify-content:center;
   font-size:11px; color:var(--muted); text-align:center;
 }
-
 /* features */
 .modal-section { margin-bottom:24px; }
 .modal-section-title {
@@ -349,23 +323,11 @@ footer a:hover { color:var(--accent); }
   content:''; position:absolute; left:0; top:9px;
   width:4px; height:4px; border-radius:50%; background:var(--accent);
 }
-
 /* bottom bar */
 .modal-cta {
   display:flex; align-items:center; justify-content:space-between; gap:16px;
   padding-top:20px; border-top:1px solid var(--line);
 }
-.modal-qr {
-  display:flex; align-items:center; gap:11px;
-  flex-shrink:0; padding:8px 13px 8px 8px;
-  border:1px solid var(--line); border-radius:10px; background:var(--bg2);
-}
-.modal-qr.hidden { display:none; }
-.modal-qr-img {
-  width:58px; height:58px; border-radius:6px;
-  background:#fff; padding:4px; display:block; flex-shrink:0;
-}
-.modal-qr-label { font-size:11px; color:var(--sub); line-height:1.4; max-width:60px; }
 .modal-btn {
   display:inline-block; text-align:center; text-decoration:none;
   font-size:14px; font-weight:500; padding:11px 28px;
@@ -375,7 +337,6 @@ footer a:hover { color:var(--accent); }
 }
 .modal-btn:hover { background:rgba(46,77,176,.06); }
 .modal-btn.disabled { background:transparent; border-color:var(--line2); color:var(--muted); cursor:default; pointer-events:none; }
-
 @media(max-width:600px) {
   .wrap { padding:0 22px; }
   .lang-inner { padding:0 22px; }
@@ -395,12 +356,10 @@ footer a:hover { color:var(--accent); }
   .modal { padding:24px; }
   .modal-cta { flex-wrap:wrap; gap:14px; }
   .modal-cta .modal-btn { flex:1; text-align:center; }
-  .modal-qr { order:0; }
 }
 </style>
 </head>
 <body>
-
 <div class="lang-bar">
   <div class="lang-inner">
     <span class="term-prompt">portfolio <span class="path">~ %</span> <span class="term-cursor">_</span></span>
@@ -411,9 +370,7 @@ footer a:hover { color:var(--accent); }
     </div>
   </div>
 </div>
-
 <div class="wrap">
-
   <section class="hero">
     <div class="hero-body">
       <div class="hero-left">
@@ -443,7 +400,6 @@ footer a:hover { color:var(--accent); }
       </div>
     </div>
   </section>
-
     <section class="section fade" style="padding-top:24px;">
     <p class="sec-label">GitHub</p>
     <img
@@ -453,7 +409,6 @@ footer a:hover { color:var(--accent); }
       onerror="this.style.display='none'"
     >
   </section>
-
   <section class="section fade">
     <p class="sec-label" data-i18n="career">경력</p>
     <div class="cs-company" data-i18n="aide-company">(주) 에이드</div>
@@ -501,7 +456,6 @@ footer a:hover { color:var(--accent); }
       </div>
     </div>
   </section>
-
     <section class="section fade">
     <p class="sec-label" data-i18n="projects">프로젝트</p>
     <div class="proj-list">
@@ -564,7 +518,6 @@ footer a:hover { color:var(--accent); }
       </a>
     </div>
   </section>
-
     <section class="section fade">
     <p class="sec-label" data-i18n="apps">앱</p>
     <div class="proj-list">
@@ -582,15 +535,13 @@ footer a:hover { color:var(--accent); }
           <div class="proj-name">Bibly</div>
           <div class="proj-type" data-i18n="bibly-type">성경·찬송가 앱 · Android</div>
         </div>
-        <div class="proj-right"><span class="proj-status" data-i18n="coming-soon">출시 예정</span></div>
+        <div class="proj-right"><span class="proj-link" style="font-size:16px;">↗</span></div>
       </div>
     </div>
   </section>
-
     <section class="section fade">
     <p class="sec-label" data-i18n="troubleshooting">문제 해결</p>
     <div class="trouble-wrap">
-
       <div class="tc">
         <div class="tc-head">
           <span class="tc-num">01</span>
@@ -621,7 +572,6 @@ footer a:hover { color:var(--accent); }
           </div>
         </div>
       </div>
-
       <div class="tc">
         <div class="tc-head">
           <span class="tc-num">02</span>
@@ -652,7 +602,6 @@ footer a:hover { color:var(--accent); }
           </div>
         </div>
       </div>
-
       <div class="tc">
         <div class="tc-head">
           <span class="tc-num">03</span>
@@ -683,10 +632,8 @@ footer a:hover { color:var(--accent); }
           </div>
         </div>
       </div>
-
     </div>
   </section>
-
     <section class="section fade">
     <p class="sec-label" data-i18n="edu">학력</p>
     <div class="ec-wrap">
@@ -716,7 +663,6 @@ footer a:hover { color:var(--accent); }
       </div>
     </div>
   </section>
-
     <section class="section fade">
     <p class="sec-label" data-i18n="recent-posts">최근 글</p>
     <div class="art-list">
@@ -746,14 +692,11 @@ footer a:hover { color:var(--accent); }
       </a>
     </div>
   </section>
-
   <footer>
     <p><a href="mailto:udhyk27@gmail.com">udhyk27@gmail.com</a></p>
     <p style="margin-top:6px;">© 2026</p>
   </footer>
-
 </div>
-
 <div class="modal-overlay" id="appModal">
   <div class="modal" style="position:relative;">
     <button class="modal-close" id="modalClose" aria-label="close">×</button>
@@ -769,14 +712,9 @@ footer a:hover { color:var(--accent); }
     </div>
     <div class="modal-cta">
       <a class="modal-btn" id="modalBtn" target="_blank"></a>
-      <div class="modal-qr" id="modalQrWrap">
-        <img class="modal-qr-img" id="modalQr" alt="QR">
-        <span class="modal-qr-label" id="modalQrLabel"></span>
-      </div>
     </div>
   </div>
 </div>
-
 <script>
 const appData = {
   bitelens: {
@@ -786,7 +724,6 @@ const appData = {
     shots: ['assets/bitelens-1.png', 'assets/bitelens-2.png', 'assets/bitelens-3.png'],
     featuresKey: 'bitelens-features',
     store: 'https://play.google.com/store/apps/details?id=com.aiid.bitelens.bitelens',
-    qr: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAewAAAHsCAIAAACfSAk3AAAK+ElEQVR4nO3cvc0z1xVGUdNgpsQduP+y3IETxeNcgIULfVfnPZtcq4Dh/HFjouf1PM8/AGj650+fAAB/nYgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOEDY+9aBfvvXv28dKuf3//7nynFO7uGt3zox+Uwnr+uWW89r23FOTJ7zp7r1LHyJA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhF3bTjnxqfsYtxR3USa3OG7ZtkMyuTGy7blv+61bJt9nX+IAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhAm4gBho9spJ7ZtaNxS3KyYtO26JvdMTn5r20bN5LbMiU/txglf4gBhIg4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGHrtlPY49Z+yOQOyYlPva5t95AZvsQBwkQcIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCbKfwfxX3Q07cOp/J45zc58k9k1vnzK/zJQ4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhC2bjvF3sKfu7XXsW3z5Nb5bNsPOVE8522+uRu+xAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJGt1M+dbfhlsn9EMfZc5wTk7sx23Z1dOPP+RIHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIu7adcmu3gRnF3Y/JDY3i/Sn61Oua5EscIEzEAcJEHCBMxAHCRBwgTMQBwkQcIEzEAcJEHCBMxAHCRBwg7Np2SnEf45aT67p17ZNbE5PnvO3aT2x7n4v/neI5b3sPfYkDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEXdtOmTS5WbFtJ+HE5LVv21c58c2/tU1xV2fb+fgSBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBvdTrm1EXHi1nbBtl2Lyd2Gbb91YtuWS/EeTpo8523P4tZv+RIHCBNxgDARBwgTcYAwEQcIE3GAMBEHCBNxgDARBwgTcYAwEQcIG91OubVHceLWdsG2LYVbex23bNuWuWXbdU2+Pycmn9e2d2PyPp/wJQ4QJuIAYSIOECbiAGEiDhAm4gBhIg4QJuIAYSIOECbiAGEiDhD2ep7nyoEmtwJOTG5WnLi1t1Dcx5h8N7bdn23/ixPF535i2/O6dZ99iQOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4St207Ztttw63wm3dpgmbRtN+bEtnf1xOQ5F3+ryJc4QJiIA4SJOECYiAOEiThAmIgDhIk4QJiIA4SJOECYiAOEiThA2Hvyx4pbE5+6wfLN2xfb3sPJa5/870yafBbbnrsvcYAwEQcIE3GAMBEHCBNxgLDX8zxjP7Ftr+PEp26eTB7nlk99FkXFDZZPbYsvcYAwEQcIE3GAMBEHCBNxgLDX8zxjP7Jtr+PEp26eTB7nlk99FkXFDZZPbYsvcYAwEQcIE3GAMBEHCBNxgLDX8zwrAAAAUklEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4DZ6sAAGSGqcAAAAAAElFTkSuQmCC',
     btnKey: 'open-playstore'
   },
   bibly: {
@@ -795,13 +732,11 @@ const appData = {
     stack: ['Flutter', 'Gemini AI', 'getbible API', 'Hive'],
     shots: ['assets/bibly-1.png', 'assets/bibly-2.png', 'assets/bibly-3.png'],
     featuresKey: 'bibly-features',
-    store: null,
-    qr: null,
-    btnKey: 'coming-soon'
+    store: 'https://play.google.com/store/apps/details?id=com.udhyk.bibly.bibly',
+    btnKey: 'open-playstore'
   }
 };
 </script>
-
 <script>
 const i18n = {
   ko: {
@@ -846,7 +781,6 @@ const i18n = {
     'open-playstore': 'Play Store',
     'bibly-type': '성경·찬송가 앱 · Android',
     'key-features': '주요 기능',
-    'scan-download': 'QR 스캔',
     'bitelens-features': [
       '사진 한 장으로 음식 인식 및 칼로리 자동 분석',
       'AI 기반 영양 성분(탄·단·지) 추정',
@@ -921,7 +855,6 @@ const i18n = {
     'open-playstore': 'Play Store',
     'bibly-type': 'Bible & Hymnal App · Android',
     'key-features': 'Key Features',
-    'scan-download': 'Scan to install',
     'bitelens-features': [
       'Food recognition & auto calorie analysis from one photo',
       'AI-based macro (carb/protein/fat) estimation',
@@ -996,7 +929,6 @@ const i18n = {
     'open-playstore': 'Play Store',
     'bibly-type': '聖書・讃美歌アプリ · Android',
     'key-features': '主な機能',
-    'scan-download': 'QR で取得',
     'bitelens-features': [
       '写真1枚で食事認識・カロリー自動分析',
       'AI による栄養素（炭水化物・タンパク質・脂質）推定',
@@ -1030,7 +962,6 @@ const i18n = {
     'tc3-sol': '<strong>ボックス番号から行・列位置を直接計算</strong>する方式に変更。行=(num-1)/w、列=(num-1)%w で求め、奇数行はジグザグ補正を適用。',
   }
 };
-
 function setLang(lang) {
   window.currentLang = lang;
   document.documentElement.lang = lang;
@@ -1044,15 +975,11 @@ function setLang(lang) {
     if (val !== undefined && typeof val === 'string') el.innerHTML = val;
   });
 }
-
 setLang('ko');
-
-
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold:0.05 });
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
-
 document.querySelectorAll('.tc-head').forEach(head => {
   head.addEventListener('click', e => {
     if(e.target.tagName==='A'||e.target.closest('a')) return;
@@ -1062,17 +989,14 @@ document.querySelectorAll('.tc-head').forEach(head => {
     if(!wasOpen) tc.classList.add('open');
   });
 });
-
 const modal = document.getElementById('appModal');
 let currentApp = null;
-
 function renderModal() {
   if (!currentApp) return;
   const app = appData[currentApp];
   const dict = i18n[window.currentLang || 'ko'];
   document.getElementById('modalName').textContent = app.name;
   document.getElementById('modalType').innerHTML = dict[app.typeKey] || '';
-
   const shots = document.getElementById('modalShots');
   shots.innerHTML = '';
   app.shots.forEach((src, idx) => {
@@ -1089,7 +1013,6 @@ function renderModal() {
     };
     shots.appendChild(img);
   });
-
   const featWrap = document.getElementById('modalFeaturesWrap');
   const featTitle = document.getElementById('modalFeaturesTitle');
   const featList = document.getElementById('modalFeatures');
@@ -1106,7 +1029,6 @@ function renderModal() {
   } else {
     featWrap.style.display = 'none';
   }
-
   const stack = document.getElementById('modalStack');
   stack.innerHTML = '';
   app.stack.forEach(t => {
@@ -1115,10 +1037,8 @@ function renderModal() {
     s.textContent = t;
     stack.appendChild(s);
   });
-
   const btn = document.getElementById('modalBtn');
   btn.innerHTML = dict[app.btnKey] || '';
-  const qrWrap = document.getElementById('modalQrWrap');
   if (app.store) {
     btn.href = app.store;
     btn.classList.remove('disabled');
@@ -1128,18 +1048,7 @@ function renderModal() {
     btn.classList.add('disabled');
     btn.setAttribute('aria-disabled', 'true');
   }
-  if (app.qr) {
-    const qr = document.getElementById('modalQr');
-    qr.onerror = function() { qrWrap.classList.add('hidden'); };
-    qr.src = app.qr;
-    qr.alt = app.name + ' QR';
-    document.getElementById('modalQrLabel').textContent = dict['scan-download'] || '';
-    qrWrap.classList.remove('hidden');
-  } else {
-    qrWrap.classList.add('hidden');
-  }
 }
-
 function openModal(key) {
   currentApp = key;
   renderModal();
@@ -1151,17 +1060,14 @@ function closeModal() {
   currentApp = null;
   document.body.style.overflow = '';
 }
-
 document.querySelectorAll('[data-app]').forEach(card => {
   card.addEventListener('click', () => openModal(card.dataset.app));
 });
 document.getElementById('modalClose').addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
 const _setLang = setLang;
 setLang = function(lang) { _setLang(lang); if (modal.classList.contains('open')) renderModal(); };
-
 </script>
 </body>
 </html>
