@@ -537,6 +537,14 @@ footer a:hover { color:var(--accent); }
         </div>
         <div class="proj-right"><span class="proj-link" style="font-size:16px;">↗</span></div>
       </div>
+      <div class="proj-item" data-app="salvio" style="cursor:pointer;">
+        <span class="proj-num">03</span>
+        <div class="proj-main">
+          <div class="proj-name">Salvio</div>
+          <div class="proj-type" data-i18n="salvio-type">Git 연동 프로젝트 진행도 확인 앱 · Android</div>
+        </div>
+        <div class="proj-right"><span class="proj-status" data-i18n="coming-soon">출시 예정</span></div>
+      </div>
     </div>
   </section>
     <section class="section fade">
@@ -734,6 +742,15 @@ const appData = {
     featuresKey: 'bibly-features',
     store: 'https://play.google.com/store/apps/details?id=com.udhyk.bibly.bibly',
     btnKey: 'open-playstore'
+  },
+  salvio: {
+    name: 'Salvio',
+    typeKey: 'salvio-type',
+    stack: ['Flutter', 'GitHub API', 'Dart'],
+    shots: ['assets/salvio-1.png', 'assets/salvio-2.png', 'assets/salvio-3.png'],
+    featuresKey: 'salvio-features',
+    store: null,
+    btnKey: 'coming-soon'
   }
 };
 </script>
@@ -780,6 +797,7 @@ const i18n = {
     'coming-soon': '출시 예정',
     'open-playstore': 'Play Store',
     'bibly-type': '성경·찬송가 앱 · Android',
+    'salvio-type': 'Git 연동 프로젝트 진행도 확인 앱 · Android',
     'key-features': '주요 기능',
     'bitelens-features': [
       '사진 한 장으로 음식 인식 및 칼로리 자동 분석',
@@ -790,6 +808,11 @@ const i18n = {
       '성경 본문 검색 및 구절 북마크',
       '찬송가 가사·악보 제공',
       'AI 묵상 도우미'
+    ],
+    'salvio-features': [
+      'GitHub 저장소 연동 및 커밋·PR·이슈 현황 확인',
+      '프로젝트별 진행률 시각화 대시보드',
+      '커밋 활동 알림'
     ],
     'recent-posts': '최근 글',
     'post1': '프라이빗 블록체인 네트워크 구축 및 백엔드 연동하기',
@@ -854,6 +877,7 @@ const i18n = {
     'coming-soon': 'Coming Soon',
     'open-playstore': 'Play Store',
     'bibly-type': 'Bible & Hymnal App · Android',
+    'salvio-type': 'Git-connected Project Progress Tracker · Android',
     'key-features': 'Key Features',
     'bitelens-features': [
       'Food recognition & auto calorie analysis from one photo',
@@ -864,6 +888,11 @@ const i18n = {
       'Scripture search & verse bookmarks',
       'Hymn lyrics & sheet music',
       'AI meditation helper'
+    ],
+    'salvio-features': [
+      'GitHub repo integration with commit/PR/issue status',
+      'Per-project progress visualization dashboard',
+      'Commit activity notifications'
     ],
     'recent-posts': 'Recent Posts',
     'post1': 'Building a Private Blockchain Network & Backend Integration',
@@ -928,6 +957,7 @@ const i18n = {
     'coming-soon': 'リリース予定',
     'open-playstore': 'Play Store',
     'bibly-type': '聖書・讃美歌アプリ · Android',
+    'salvio-type': 'Git 連携プロジェクト進捗確認アプリ · Android',
     'key-features': '主な機能',
     'bitelens-features': [
       '写真1枚で食事認識・カロリー自動分析',
@@ -938,6 +968,11 @@ const i18n = {
       '聖書本文検索・節のブックマーク',
       '讃美歌の歌詞・楽譜',
       'AI 黙想アシスト'
+    ],
+    'salvio-features': [
+      'GitHub リポジトリ連携でコミット・PR・イシュー状況を確認',
+      'プロジェクト別進捗率の可視化ダッシュボード',
+      'コミットアクティビティ通知'
     ],
     'recent-posts': '最近の投稿',
     'post1': 'プライベートブロックチェーンネットワーク構築とバックエンド連携',
